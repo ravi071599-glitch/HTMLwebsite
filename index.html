@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:black;
+    color:white;
+    overflow:hidden;
+}
+
+section{
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transform:translateX(100%);
+    transition:all 0.8s ease;
+    padding:20px;
+}
+
+section.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+h1{
+    font-size:38px;
+    color:#ff0033;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:18px;
+    max-width:650px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff0033;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    color:#ff0033;
+    transform:scale(1.05);
+}
+
+a{
+    color:#ff0033;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Favourite Place Image */
+.fav-image{
+    width:280px;
+    border-radius:20px;
+    margin:20px 0;
+    box-shadow:0 0 30px rgba(255,0,51,0.6);
+    transition:0.4s;
+}
+
+.fav-image:hover{
+    transform:scale(1.05);
+}
+
+/* Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+    gap:15px;
+    width:90%;
+    max-width:900px;
+    margin:20px 0;
+}
+
+.memory{
+    width:100%;
+    border-radius:15px;
+    cursor:pointer;
+    transition:0.4s ease;
+    box-shadow:0 0 15px rgba(255,0,51,0.4);
+}
+
+.memory:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px rgba(255,0,51,0.8);
+}
+
+/* Lightbox */
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s ease;
+    z-index:999;
+}
+
+.lightbox.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.lightbox-img{
+    max-width:90%;
+    max-height:85%;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,0,51,0.8);
+    animation:zoomIn 0.4s ease;
+}
+
+.close{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:40px;
+    color:#ff0033;
+    cursor:pointer;
+}
+
+@keyframes zoomIn{
+    from{ transform:scale(0.7); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Page 1 -->
+<section id="page1" class="active">
+    <h1>❤️ என் உயிரே ❤️</h1>
+    <p>
+        "உன்னோட சிரிப்பு தான் என் உலகம்.  
+        உன்னோட அன்பு தான் என் வாழ்க்கை."
+    </p>
+    <button onclick="nextPage(2)">Start ❤️</button>
+</section>
+
+<!-- Page 2 -->
+<section id="page2">
+    <h1>📍 Our Favourite Place</h1>
+
+    <!-- Rename your beach image as beach.jpg -->
+    <img src="beach.jpg" alt="Our Favourite Place" class="fav-image">
+
+    <p>
+        அந்த கடற்கரை…  
+        நீ என் கையை பிடிச்சு நடந்த அந்த நேரம் ❤️  
+        அந்த moment என் வாழ்க்கையின் அழகான நினைவு.
+    </p>
+
+    <button onclick="nextPage(3)">Next ➜</button>
+</section>
+
+<!-- Page 3 -->
+<section id="page3">
+    <h1>🎵 Our Favourite Song</h1>
+    <p>
+        இந்த பாடல் கேட்டாலே உன்னோட நினைவுகள் தான் ❤️
+    </p>
+
+    <!-- Replace with your real Spotify link -->
+    <a href="https://open.spotify.com/" target="_blank">
+        Click here to listen on Spotify 🎶
+    </a>
+
+    <button onclick="nextPage(4)">Next ➜</button>
+</section>
+
+<!-- Page 4 -->
+<section id="page4">
+    <h1>📸 Our Beautiful Memories</h1>
+
+    <div class="gallery">
+        <img src="eee.jpeg" class="memory">
+        <img src="ffff.jpeg" class="memory">
+        <img src="gggg.jpeg" class="memory">
+        <img src="NE.jpeg" class="memory">
+        <img src="rrrr.jpeg" class="memory">
+        <img src="memory1.jpeg" class="memory">
+        <img src="memory2.jpeg" class="memory">
+    </div>
+
+    <button onclick="nextPage(5)">Final ❤️</button>
+</section>
+
+<!-- Page 5 -->
+<section id="page5">
+    <h1>❤️ Happy Valentine’s Day ❤️</h1>
+    <p>
+        எப்போதும் என் வாழ்க்கையில் நீ இருந்தாலே போதும்.  
+        Love you forever ❤️
+    </p>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+</div>
+
+<script>
+function nextPage(pageNumber){
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => section.classList.remove("active"));
+    document.getElementById("page" + pageNumber).classList.add("active");
+}
+
+// Lightbox
+const images = document.querySelectorAll(".memory");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+images.forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.classList.add("active");
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", (e) => {
+    if(e.target !== lightboxImg){
+        lightbox.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
